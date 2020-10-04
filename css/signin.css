@@ -1,0 +1,39 @@
+
+
+.container{
+  position: fixed; /* or absolute */
+  top: 15%;
+  left: 15%;
+}
+
+
+.container .box {
+  float: left;
+  width: 400px;
+  margin: 20px;
+   
+}
+
+.container .box .top {
+  padding: 12px;
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+}
+
+.container .box .bottom {
+  padding: 12px;
+  background-color: gainsboro;
+  color: black;
+  display: none;
+}
+      
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: skyblue;
+   color: white;
+   text-align: center;
+}

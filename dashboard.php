@@ -50,6 +50,7 @@ ul.topnav li.right {float: right;}
     #$serv=join("', '", $aaa);
     foreach($row as $value){
     $result= mysqli_query($db, "SELECT *  FROM ratings where service_name in('$value')");
+        
     }
     #$result = mysqli_query($db, "SELECT * FROM ratings");
     
@@ -67,7 +68,7 @@ ul.topnav li.right {float: right;}
   <li><a href="#news">News</a></li>
   <li><a href="#contact">Contact</a></li>
   <li><a href="#contact">Contact</a></li>
-  <li class="right"><a href="index.php">Login</a></li>
+  <li class="right"><a href="ulogin.php">Login</a></li>
 </ul>
 
 <div style="padding:0 16px;">
@@ -88,10 +89,10 @@ ul.topnav li.right {float: right;}
     ?>
    
     
-<footer>
-  <p>Author: Hege Refsnes<br>
-  <a href="mailto:hege@example.com">hege@example.com</a></p>
-</footer>
+<div class="footer">
+  <p>All Right reserve for Rating Zone.<br>
+  <a href="mailto:ckant68@gmail.com">ckant68@gmail.com</a></p>
+</div>
 
 </body>
 </html>

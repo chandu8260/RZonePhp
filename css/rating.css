@@ -57,3 +57,19 @@ label.star:before {
 	content: '\f006';
 	font-family: FontAwesome;
 }
+.stars{
+    
+margin-top: 10%;
+    margin-left: 35%;
+    
+    
+}
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: skyblue;
+   color: white;
+   text-align: center;
+}

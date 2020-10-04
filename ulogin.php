@@ -30,14 +30,15 @@ $(document).ready(function() {
 <body>
     <?php
    include("config.php");
+    include("query.php");
    session_start();
    
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form 
       $myemailid = mysqli_real_escape_string($db,$_POST['username']);
       $mypassword = mysqli_real_escape_string($db,$_POST['password']); 
-      $sql = "SELECT user_id FROM user WHERE email_id = '$myemailid' and password = '$mypassword'";
-      $result = mysqli_query($db,$sql);
+      $login = "SELECT user_id FROM user WHERE email_id = '$myemailid' and password = '$mypassword'";
+      $result = mysqli_query($db,$login);
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
       $active = $row['user_id'];
       $count = mysqli_num_rows($result);
@@ -95,7 +96,7 @@ $(document).ready(function() {
     <div class="footer">
     <!--LOGIN BUTTON--><input type="submit" name="submit" value="Login" class="button" /><!--END LOGIN BUTTON-->
     <!--REGISTER BUTTON--><!--<input type="submit" name="submit" value="Register" class="register" /><!--END REGISTER BUTTON-->
-        <div class="register"><a href="register.php">Register</a></div>
+        <div class="register"><a href="registration.php">Register</a></div>
     </div>
     <!--END FOOTER-->
 

@@ -2,5 +2,6 @@
 session_start();
 
 unset($_SESSION["login_user"]);
-header("Location:index.php");
+unset($_SESSION["name"]);
+header("Location:signin.php");
 ?>

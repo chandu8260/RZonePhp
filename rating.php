@@ -42,15 +42,17 @@ ul.topnav li.right {float: right;}
 <body>
     <?php
 session_start();
+    ?>
+    <?php
     if($_SESSION["login_user"]) {
  #echo $_SESSION["login_user"]; 
-      ?>                           
+      ?>   }                        
     <!--<a href="logout.php" tite="Logout">   Logout </a>-->
        <?php
-}
+
     else{
         echo "<h1>Please login first .</h1>";
-        header("location: index.php");
+        header("location: ulogin.php");
         } 
     ?>
     
@@ -60,22 +62,33 @@ include_once "config.php";
  
 // Define variables and initialize with empty values
 $servicename = "";
+//$location="";
 $rate =[];
 $review = "";
 $user="";
-$service_err = $review_err = $rate_err = $user_err="";
+
+$service_err = $review_err = $rate_err = $user_err= $location_err= "";
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     
     $input_servicename = trim($_POST["serviceProvider"]);
     if(empty($input_servicename)){
-        $name_err = "Please enter a serveice.";
+        $service_err = "Please enter a serveice.";
     } elseif(!filter_var($input_servicename, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){
         $service_err = "Please enter a valid service.";
     } else{
         $servicename = $input_servicename;
     }
+    
+    /* $input_location = trim($_POST["location"]);
+    if(empty($input_location)){
+        $location_err = "Please enter a location.";
+    } elseif(!filter_var($input_location, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){
+        $location_err = "Please enter a valid location.";
+    } else{
+        $location = $input_location;
+    }*/
     
     $input_rate = ($_POST["star"]);
     if(empty($input_rate)){
@@ -112,17 +125,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if($count1!=1){
     if(empty($service_err) && empty($rate_err) && empty($review_err)&& empty($user_err)){
         // Prepare an insert statement
-        $sql = "INSERT INTO ratings (service_name, rate, review,user) VALUES (?, ?, ?, ?)";
+        $sql = "INSERT INTO ratings (service_name,location, rate, review,user) VALUES (?, ?, ?, ?,?)";
          
         if($stmt = mysqli_prepare($db, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "ssss", $param_service, $param_rate, $param_review, $param_user);
+            mysqli_stmt_bind_param($stmt, "sssss", $param_service,$param_rate, $param_review, $param_user);
             
             // Set parameters
             $param_service = $servicename;
+            //$param_location=$location;
             $param_rate = $rate;
             $param_review = $review;
             $param_user = $user;
+           
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
@@ -163,9 +178,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		<form method="post" action="">
            
 			<div class="sp">
-				<label>Service Provider Url<label>      Ex:xyz.com</label></label> <input type="text"
-					name="serviceProvider" required="required">
+				<label>Service Provider Url<label></label></label> <input type="text"
+					name="serviceProvider" required="required" placeholder="A company,service provider or vendor name">
 			</div>
+            <!--<div class="sp">
+				<label>Location<label></label></label> <input type="text"
+					name="location" placeholder="A location,country or city">
+			</div>-->
             
 			<input class="star star-5" id="star-5" type="radio" name="star"
 				value="5" /> <label class="star star-5" for="star-5"></label> <input
@@ -194,6 +213,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 	</div>
    
-    
+    <div class="footer">
+  <p>All Right reserve for Rating Zone.<br>
+  <a href="mailto:ckant68@gmail.com">ckant68@gmail.com</a></p>
+</div>
     </body>
 </html>

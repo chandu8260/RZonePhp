@@ -75,7 +75,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         if($count!=1){
     $sql = "INSERT INTO user(email_id,username,first_name,last_name,password ) values('$emailid','$username','$firstname','$lastname','$password')";
      if ($db->query($sql) === TRUE) {
-     header("location: index.php");
+     header("location: ulogin.php");
      } else {
      echo "Error: " . $sql . "<br>" . $db->error;
      }
@@ -153,7 +153,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <div class="footer">
     <!--LOGIN BUTTON--><input type="submit" name="submit" value="Register" class="button" /><!--END LOGIN BUTTON-->
     <!--REGISTER BUTTON--><!--<input type="submit" name="submit" value="Register" class="register" /><!--END REGISTER BUTTON-->
-        <div class="register"><a href="index.php">Login</a></div>
+        <div class="register"><a href="ulogin.php">Login</a></div>
     </div>
     <!--END FOOTER-->
 
@@ -175,7 +175,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 </script>
     </div>
 		
-  
+  <div class="footer">
+  <p>All Right reserve for Rating Zone.<br>
+  <a href="mailto:ckant68@gmail.com">ckant68@gmail.com</a></p>
+</div>
 
 </body>
 </html>
