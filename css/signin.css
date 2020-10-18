@@ -1,9 +1,14 @@
 
-
+body{
+    
+     background-color:#f0eeeb; 
+    
+}
 .container{
   position: fixed; /* or absolute */
   top: 15%;
   left: 15%;
+   
 }
 
 
@@ -23,7 +28,7 @@
 
 .container .box .bottom {
   padding: 12px;
-  background-color: gainsboro;
+  background-color: white;
   color: black;
   display: none;
 }

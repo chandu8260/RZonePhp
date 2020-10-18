@@ -8,11 +8,64 @@
       <link href="css/registration.css" rel="stylesheet" type="text/css" />
     
     <style>
-        #user{}
+      body {margin: 0;}
+
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
+    
+    
+}
+    
+    
+    .toprv a:link{
+        text-decoration: none;
+    }
+    
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+        
+        
+        ul.topnav li img {
+  height: 50px;
+            width: 50px;
+}
+
+ul.topnav li a:hover:not(.active) {background-color: #fcba03;}
+
+ul.topnav li a.active {background-color: #fcba03;}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px) {
+  ul.topnav li.right, 
+  ul.topnav li {float: none;}
+}
  
     </style>
     </head>
     <body>
+        
+  <ul class="topnav">
+  <li><img src="images/rating.png"></li>
+  <li><a  href="#home"><b>Home</b></a></li>
+  <li><a href="commondashboard.php"><b>Dashboard</b></a></li>
+  <li><a href="#contact"><b>Contact</b></a></li>
+ 
+  <li class="right"><a href="signin.php"><b>Login</b></a></li>
+    <li class="right"><a href="registration.php"><b>Register</b></a></li>
+</ul>
 <?php
 // Include config file
 include_once "config.php";
@@ -167,7 +220,7 @@ $vservice_err = $vlocation_err = $vmail_err = $vpassword_err = $vlogo_err= "";
 }
         
 
-?> 
+?>  
         <div class="container">
   <div class="box">
     <div class="top">
@@ -183,7 +236,7 @@ $vservice_err = $vlocation_err = $vmail_err = $vpassword_err = $vlogo_err= "";
     <p><input class="form-control" name="password" type="password" class="input password" placeholder="Password" onfocus="this.value=''" id="password" required="true"/></p>
    <p><input class="form-control" name="confirmpassword" type="password" class="input password" placeholder="Confirm Password" onfocus="this.value=''" required="true" id="cpassword" /></p>
             <input type="submit" name="usubmit" class="btn btn-primary" value="Register">
-         <a href="signin.php">Login</a>
+   <p>By clicking “Sign Up”, you agree to our<a href="" onclick="window.open('tc.php','Term & COndiitons')"> terms of service and privacy policy</a></p>
         
             
       
@@ -203,9 +256,9 @@ $vservice_err = $vlocation_err = $vmail_err = $vpassword_err = $vlogo_err= "";
             <p><input type="password" class="form-control" name="vendor_password" placeholder="Password"></p>
             <p><input type="password" class="form-control" name="vendor_cpasssword" placeholder="Confirm Password"></p>
             <p><label>Upload Company Logo</label></p>
-            <p><input type="file" id="img" name="logo" accept="image/*" ></p>
-            <input type="submit" name= "vsubmit" class="btn btn-primary" value="Register">
-           <a href="signin.php">Login</a>
+            <p><input type="file" id="img" name="logo" accept="image/*" required="true"></p>
+            <input  type="submit" name= "vsubmit" class="btn btn-primary" value="Sign Up">
+           <p>By clicking “Sign Up”, you agree to our<a href="" onclick="window.open('tc.php','Term & COndiitons')"> terms of service and privacy policy</a></p>
         
         
         </form>

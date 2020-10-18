@@ -11,8 +11,16 @@ ul.topnav {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #e1eaea;
+  background-color: white;
+    
+    
 }
+    
+    
+    .toprv a:link{
+        text-decoration: none;
+    }
+    
 
 ul.topnav li {float: left;}
 
@@ -24,9 +32,9 @@ ul.topnav li a {
   text-decoration: none;
 }
 
-ul.topnav li a:hover:not(.active) {background-color: #ffff80;}
+ul.topnav li a:hover:not(.active) {background-color: #fcba03;}
 
-ul.topnav li a.active {background-color: #ffff80;}
+ul.topnav li a.active {background-color: #fcba03;}
 
 ul.topnav li.right {float: right;}
 

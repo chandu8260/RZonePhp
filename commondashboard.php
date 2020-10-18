@@ -15,7 +15,7 @@ ul.topnav {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #e1eaea;
+  background-color: white;
     
     
 }
@@ -35,10 +35,16 @@ ul.topnav li a {
   padding: 14px 16px;
   text-decoration: none;
 }
+    
+    ul.topnav li img {
+        height: 50px;
+        width: 50px;
+ 
+}
 
-ul.topnav li a:hover:not(.active) {background-color: #ffff80;}
+ul.topnav li a:hover:not(.active) {background-color: #fcba03;}
 
-ul.topnav li a.active {background-color: #ffff80;}
+ul.topnav li a.active {background-color: #fcba03;}
 
 ul.topnav li.right {float: right;}
 
@@ -59,12 +65,13 @@ ul.topnav li.right {float: right;}
 <body>
 
 <ul class="topnav">
-  <li><a class="active" href="#home">Home</a></li>
-  <li><a href="#news">News</a></li>
-  <li><a href="#contact">Contact</a></li>
-  <li><a href="#contact">Contact</a></li>
-  <li class="right"><a href="signin.php">Login</a></li>
-    <li class="right"><a href="registration.php">Register</a></li>
+ <li><img src="images/rating.png"></li>
+  <li><a  href="#home"><b>Home</b></a></li>
+  <li><a href="commondashboard.php"><b>Dashboard</b></a></li>
+  <li><a href="#contact"><b>Contact</b></a></li>
+  
+  <li class="right"><a href="signin.php"><b>Login</b></a></li>
+    <li class="right"><a href="registration.php"><b>Register</b></a></li>
 </ul>
 
 <div style="padding:0 16px;">
@@ -78,7 +85,7 @@ ul.topnav li.right {float: right;}
    
         <input type="text"  placeholder="Company,Service" name="service" >
       
-        <input type="text"  placeholder="Place,City" name="location">
+        <!--<input type="text"  placeholder="Place,City" name="location">-->
        
      
         <button class="btn btn-default" type="submit">Find</button>

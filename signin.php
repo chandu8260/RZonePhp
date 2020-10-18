@@ -7,10 +7,65 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
       <link href="css/signin.css" rel="stylesheet" type="text/css" />
+    <style>
     
+    
+    body {margin: 0;}
+
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
+    
+    
+}
+    
+    
+    .toprv a:link{
+        text-decoration: none;
+    }
+    
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+        
+ul.topnav li img {
+ height: 50px;
+ width: 50px;
+}
+
+ul.topnav li a:hover:not(.active) {background-color: #fcba03;}
+
+ul.topnav li a.active {background-color: #fcba03;}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px) {
+  ul.topnav li.right, 
+  ul.topnav li {float: none;}
+}
+    
+    </style>
     </head>
     <body>
-    
+    <ul class="topnav">
+  <li><img src="images/rating.png"></li>
+  <li><a  href="#home"><b>Home</b></a></li>
+  <li><a href="commondashboard.php"><b>Dashboard</b></a></li>
+  <li><a href="#contact"><b>Contact</b></a></li>
+  
+  <li class="right"><a href="signin.php"><b>Login</b></a></li>
+    <li class="right"><a href="registration.php"><b>Register</b></a></li>
+</ul>
      <?php
         session_start();
    include("config.php");
@@ -56,7 +111,8 @@
            
             }
             else{
-                echo "invalid Username or Password";
+               // echo "invalid Username or Password";
+                 echo "<script>alert('invalid Username or Password');</script>";
             }
         }
             else {
@@ -74,7 +130,7 @@
     <div class="container">
   <div class="box">
     <div class="top">
-      <p style="">User Login</p>
+      <p style="">User Signin</p>
     </div>
     <div class="bottom">
      <form id="user" action="" method="post">
@@ -94,7 +150,7 @@
   </div>
   <div class="box">
     <div class="top">
-      <p>Vendor Login</p>
+      <p>Vendor Signin</p>
     </div>
     <div class="bottom">
        <form id="vendor" action="" method="post" enctype="multipart/form-data">

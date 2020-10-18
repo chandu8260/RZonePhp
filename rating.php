@@ -13,8 +13,16 @@ ul.topnav {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #e1eaea;
+  background-color: white;
+    
+    
 }
+    
+    
+    .toprv a:link{
+        text-decoration: none;
+    }
+    
 
 ul.topnav li {float: left;}
 
@@ -25,10 +33,21 @@ ul.topnav li a {
   padding: 14px 16px;
   text-decoration: none;
 }
+    ul.topnav li img {
+ height: 50px;
+        width:50px;
+}
+    ul.topnav li  {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
 
-ul.topnav li a:hover:not(.active) {background-color: #ffff80;}
+ul.topnav li a:hover:not(.active) {background-color: #fcba03;}
 
-ul.topnav li a.active {background-color: #ffff80;}
+ul.topnav li a.active {background-color: #fcba03;}
 
 ul.topnav li.right {float: right;}
 
@@ -45,10 +64,10 @@ session_start();
     ?>
     <?php
     if($_SESSION["login_user"]) {
- #echo $_SESSION["login_user"]; 
-      ?>   }                        
-    <!--<a href="logout.php" tite="Logout">   Logout </a>-->
-       <?php
+ 
+         }                     
+   
+       
 
     else{
         echo "<h1>Please login first .</h1>";
@@ -166,12 +185,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 ?>   
     
    <ul class="topnav">
-  <li><a class="active" href="#home">Home</a></li>
-  <li><a href="#news">News</a></li>
-  <li><a href="edashboard.php">My Ratings</a></li>
-  <li><a href="#contact">Contact</a></li>
-  <li class="right">hi <?php echo $_SESSION["login_user"]; ?></li>
-  <li class="right"><a href="logout.php">Logout</a></li>
+  <li><img src="images/rating.png"></li>
+  <li><a class="active" href="#home"><b>Home</b></a></li>
+ 
+  <li><a href="edashboard.php"><b>My Ratings</b></a></li>
+  <li><a href="#contact"><b>Contact</b></a></li>
+  <li class="right"><a>hi <?php echo $_SESSION["login_user"]; ?></a></li>
+  <li class="right"><a href="logout.php"><b>Logout</b></a></li>
        
 </ul>
    <div class="stars">
